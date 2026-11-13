@@ -3,6 +3,7 @@ package cl.duoc.colegio.bitacoras.controller;
 import cl.duoc.colegio.bitacoras.model.Bitacora;
 import cl.duoc.colegio.bitacoras.model.EstadoBitacora;
 import cl.duoc.colegio.bitacoras.service.BitacoraService;
+import cl.duoc.colegio.bitacoras.service.PreguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,9 @@ public class BitacoraController {
 
     @Autowired
     private BitacoraService bitacoraService;
+
+    @Autowired
+    private PreguntaService preguntaService;
 
     // 1. GET: listar todas
     @GetMapping
@@ -102,7 +106,8 @@ public class BitacoraController {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body("Solo se puede eliminar una bitácora en borrador.");
         }
-        bitacoraService.borrar(id);
+        preguntaService.borrarPorBitacora(id);   // primero sus preguntas
+        bitacoraService.borrar(id);              // después la bitácora
         return ResponseEntity.noContent().build();                                     // 204
     }
 }

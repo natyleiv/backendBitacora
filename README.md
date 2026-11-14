@@ -40,8 +40,22 @@ cd ms-usuarios
 
 ## Endpoints
 
-_(Se completa a medida que se implementan. El detalle planificado está en el README de cada microservicio.)_
+### ms-bitacoras (puerto 8082)
+
+Detalle completo, con reglas y ejemplos de JSON, en [`ms-bitacoras/README.md`](ms-bitacoras/README.md).
+
+| Recurso | Rutas |
+|---|---|
+| Bitácoras | `GET/POST /bitacoras`, `GET/PUT/DELETE /bitacoras/{id}`, `GET /bitacoras/asignacion/{asignacionId}`, `PATCH /bitacoras/{id}/publicar`, `PATCH /bitacoras/{id}/cerrar` |
+| Preguntas orientadoras | `GET/PUT /bitacoras/{bitacoraId}/preguntas` |
+| Registros | `POST /registros`, `GET/PUT/DELETE /registros/{id}`, `GET /registros/bitacora/{bitacoraId}`, `GET /registros/estudiante/{estudianteId}` |
+| Retroalimentación | `GET/PUT /registros/{registroId}/retroalimentacion` |
+
+### ms-usuarios (puerto 8081)
+
+_(En desarrollo.)_
 
 ## Estado
 
-Avance: estructura base de los dos microservicios, con su configuración y sus paquetes (`model`, `repository`, `service`, `controller`, `dto`).
+- **ms-bitacoras:** completo. Entidades, repositorios, servicios con validaciones y reglas de negocio, controladores REST, datos de prueba y endpoints probados con Postman.
+- **ms-usuarios:** en desarrollo.

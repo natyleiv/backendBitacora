@@ -53,9 +53,17 @@ Detalle completo, con reglas y ejemplos de JSON, en [`ms-bitacoras/README.md`](m
 
 ### ms-usuarios (puerto 8081)
 
-_(En desarrollo.)_
+Detalle completo, con reglas, ejemplos de JSON y datos de prueba, en [`ms-usuarios/README.md`](ms-usuarios/README.md).
+
+| Recurso | Rutas |
+|---|---|
+| Login | `POST /login` |
+| Cursos | `GET/POST /cursos`, `GET/PUT/DELETE /cursos/{id}` |
+| Asignaturas | `GET/POST /asignaturas`, `GET/PUT/DELETE /asignaturas/{id}` |
+| Usuarios | `GET/POST /usuarios`, `GET/PUT/DELETE /usuarios/{id}`, `GET /usuarios/curso/{cursoId}` |
+| Asignaciones | `GET/POST /asignaciones`, `GET/DELETE /asignaciones/{id}`, `GET /asignaciones/docente/{docenteId}`, `GET /asignaciones/curso/{cursoId}` |
 
 ## Estado
 
 - **ms-bitacoras:** completo. Entidades, repositorios, servicios con validaciones y reglas de negocio, controladores REST, datos de prueba y endpoints probados con Postman.
-- **ms-usuarios:** en desarrollo.
+- **ms-usuarios:** completo. Entidades, repositorios, servicios con `validar()` y reglas de negocio, controladores REST, login sin contraseña y datos de prueba con los mismos ids que usa `ms-bitacoras`. Endpoints probados con Postman.

@@ -48,19 +48,19 @@ Entre microservicios no hay claves foráneas: `ms-bitacoras` guarda `asignacionI
 Login (`POST /login`):
 
 ```json
-{ "correo": "ana@colegio.cl", "password": "docente123" }
+{ "correo": "docente1@escuela.cl", "password": "docente123" }
 ```
 
 Respuesta (sin contraseña):
 
 ```json
-{ "id": 1, "nombre": "Ana", "correo": "ana@colegio.cl", "perfil": "DOCENTE", "cursoId": null }
+{ "id": 1, "nombre": "Profesor Christian Acuña", "correo": "docente1@escuela.cl", "perfil": "DOCENTE", "cursoId": null }
 ```
 
 Crear estudiante (`POST /usuarios`):
 
 ```json
-{ "nombre": "Estudiante Seis", "correo": "estudiante6@colegio.cl", "password": "alumno123", "perfil": "ESTUDIANTE", "cursoId": 1 }
+{ "nombre": "Estudiante Seis", "correo": "alumno6@escuela.cl", "password": "alumno123", "perfil": "ESTUDIANTE", "cursoId": 1 }
 ```
 
 Crear asignación (`POST /asignaciones`):
@@ -71,23 +71,23 @@ Crear asignación (`POST /asignaciones`):
 
 ## Datos de prueba
 
-Se cargan solos si la tabla de usuarios está vacía. **Los ids coinciden con los que usa `ms-bitacoras`**, por eso se guardan en este orden.
+Se cargan solos si la tabla de usuarios está vacía. **Los ids coinciden con los que usa `ms-bitacoras`**, por eso se guardan en este orden. Los nombres y correos son los mismos que usa la app (incluidos sus botones de acceso rápido).
 
-| Id | Usuarios | Curso | Contraseña |
+| Id | Usuario | Curso | Contraseña |
 |---|---|---|---|
-| 1 | Ana (docente) – `ana@colegio.cl` | – | `docente123` |
-| 2 | Luis (docente) – `luis@colegio.cl` | – | `docente123` |
-| 3 | Estudiante Uno – `estudiante1@colegio.cl` | 5°A | `alumno123` |
-| 4 | Estudiante Dos – `estudiante2@colegio.cl` | 5°A | `alumno123` |
-| 5 | Estudiante Tres – `estudiante3@colegio.cl` | 5°A | `alumno123` |
-| 6 | Estudiante Cuatro – `estudiante4@colegio.cl` | 5°A | `alumno123` |
-| 7 | Estudiante Cinco – `estudiante5@colegio.cl` | 6°B | `alumno123` |
+| 1 | Profesor Christian Acuña (docente) – `docente1@escuela.cl` | – | `docente123` |
+| 2 | Profesor Luis Soto (docente) – `docente2@escuela.cl` | – | `docente123` |
+| 3 | Estudiante Uno – `alumno1@escuela.cl` | 5°A | `alumno123` |
+| 4 | Estudiante Dos – `alumno2@escuela.cl` | 5°A | `alumno123` |
+| 5 | Estudiante Tres – `alumno3@escuela.cl` | 5°A | `alumno123` |
+| 6 | Estudiante Cuatro – `alumno4@escuela.cl` | 5°A | `alumno123` |
+| 7 | Estudiante Cinco – `alumno5@escuela.cl` | 6°B | `alumno123` |
 
 | Id | Asignación |
 |---|---|
-| 1 | Ana, 5°A, Matemática |
-| 2 | Ana, 5°A, Lenguaje |
-| 3 | Luis, 6°B, Historia |
+| 1 | Christian Acuña, 5°A, Matemática |
+| 2 | Christian Acuña, 5°A, Lenguaje |
+| 3 | Luis Soto, 6°B, Historia |
 
 Cursos: 1 = 5°A, 2 = 6°B. Asignaturas: 1 = Matemática, 2 = Lenguaje, 3 = Historia.
 

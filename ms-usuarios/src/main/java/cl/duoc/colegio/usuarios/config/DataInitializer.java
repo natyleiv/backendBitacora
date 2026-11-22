@@ -35,27 +35,28 @@ public class DataInitializer {
                 Asignatura lenguaje = asignaturaRepository.save(new Asignatura(null, "Lenguaje"));
                 Asignatura historia = asignaturaRepository.save(new Asignatura(null, "Historia"));
 
-                // 3) Docentes primero: quedan con id 1 (Ana) y 2 (Luis)
-                Usuario ana = usuarioRepository.save(new Usuario(null, "Ana",
-                        "ana@colegio.cl", "docente123", Perfil.DOCENTE, null));
-                Usuario luis = usuarioRepository.save(new Usuario(null, "Luis",
-                        "luis@colegio.cl", "docente123", Perfil.DOCENTE, null));
+                // 3) Docentes primero: quedan con id 1 (Christian Acuña) y 2 (Luis Soto)
+                //    Mismos nombres y correos que DatosDemo.kt de la app
+                Usuario christian = usuarioRepository.save(new Usuario(null, "Profesor Christian Acuña",
+                        "docente1@escuela.cl", "docente123", Perfil.DOCENTE, null));
+                Usuario luis = usuarioRepository.save(new Usuario(null, "Profesor Luis Soto",
+                        "docente2@escuela.cl", "docente123", Perfil.DOCENTE, null));
 
-                // 4) Estudiantes: ids 3 al 7 (el 3 y el 4 están en 5°A)
+                // 4) Estudiantes: ids 3 al 7 (del 3 al 6 en 5°A, el 7 en 6°B)
                 usuarioRepository.save(new Usuario(null, "Estudiante Uno",
-                        "estudiante1@colegio.cl", "alumno123", Perfil.ESTUDIANTE, quintoA.getId()));
+                        "alumno1@escuela.cl", "alumno123", Perfil.ESTUDIANTE, quintoA.getId()));
                 usuarioRepository.save(new Usuario(null, "Estudiante Dos",
-                        "estudiante2@colegio.cl", "alumno123", Perfil.ESTUDIANTE, quintoA.getId()));
+                        "alumno2@escuela.cl", "alumno123", Perfil.ESTUDIANTE, quintoA.getId()));
                 usuarioRepository.save(new Usuario(null, "Estudiante Tres",
-                        "estudiante3@colegio.cl", "alumno123", Perfil.ESTUDIANTE, quintoA.getId()));
+                        "alumno3@escuela.cl", "alumno123", Perfil.ESTUDIANTE, quintoA.getId()));
                 usuarioRepository.save(new Usuario(null, "Estudiante Cuatro",
-                        "estudiante4@colegio.cl", "alumno123", Perfil.ESTUDIANTE, quintoA.getId()));
+                        "alumno4@escuela.cl", "alumno123", Perfil.ESTUDIANTE, quintoA.getId()));
                 usuarioRepository.save(new Usuario(null, "Estudiante Cinco",
-                        "estudiante5@colegio.cl", "alumno123", Perfil.ESTUDIANTE, sextoB.getId()));
+                        "alumno5@escuela.cl", "alumno123", Perfil.ESTUDIANTE, sextoB.getId()));
 
-                // 5) Asignaciones: 1 = Ana 5°A Matemática, 2 = Ana 5°A Lenguaje, 3 = Luis 6°B Historia
-                asignacionRepository.save(new Asignacion(null, ana.getId(), quintoA.getId(), matematica.getId()));
-                asignacionRepository.save(new Asignacion(null, ana.getId(), quintoA.getId(), lenguaje.getId()));
+                // 5) Asignaciones: 1 = Christian 5°A Matemática, 2 = Christian 5°A Lenguaje, 3 = Luis 6°B Historia
+                asignacionRepository.save(new Asignacion(null, christian.getId(), quintoA.getId(), matematica.getId()));
+                asignacionRepository.save(new Asignacion(null, christian.getId(), quintoA.getId(), lenguaje.getId()));
                 asignacionRepository.save(new Asignacion(null, luis.getId(), sextoB.getId(), historia.getId()));
             }
         };

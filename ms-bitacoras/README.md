@@ -85,66 +85,7 @@ Crear bitácora (`POST /bitacoras`):
 ```json
 {
   "asignacionId": 2,
-  "titulo": "Bitácora de Noviembre - Lenguaje",
-  "proposito": "Registrar lo aprendido en Lenguaje durante noviembre.",
+  "titulo": "Bitácora de Diciembre - Lenguaje",
+  "proposito": "Registrar lo aprendido en Lenguaje durante diciembre.",
   "instrucciones": "Escribe un registro después de cada clase.",
-  "mes": 11,
-  "anio": 2026
-}
-```
-
-Reemplazar preguntas (`PUT /bitacoras/{id}/preguntas`):
-
-```json
-[
-  { "texto": "¿Qué leímos hoy?" },
-  { "texto": "¿Qué palabra nueva aprendiste?" }
-]
-```
-
-Crear registro (`POST /registros`):
-
-```json
-{
-  "bitacoraId": 1,
-  "estudianteId": 3,
-  "fechaClase": "05/10/2026",
-  "contenido": "Fracciones equivalentes",
-  "actividad": "Ejercicios en parejas",
-  "aprendizaje": "Cómo encontrar fracciones equivalentes",
-  "estadoEnvio": "ENVIADO"
-}
-```
-
-Comentar un registro (`PUT /registros/{id}/retroalimentacion`):
-
-```json
-{
-  "docenteId": 1,
-  "comentario": "Muy buen trabajo, revisa cómo simplificar antes de comparar."
-}
-```
-
-## Datos de prueba
-
-Si la tabla `bitacoras` está vacía, al iniciar se cargan:
-
-| Dato | Detalle |
-|---|---|
-| Bitácora 1 | Matemática, octubre 2026, asignación 1, `PUBLICADA`, con 3 preguntas |
-| Bitácora 2 | Historia, octubre 2026, asignación 3, `PUBLICADA`, con 2 preguntas |
-| Registro 1 | Estudiante 3 en Matemática, 05/10/2026, `ENVIADO` y con retroalimentación del docente 1 |
-| Registro 2 | Estudiante 4 en Matemática, 06/10/2026, `BORRADOR` |
-
-Para volver a cargarlos: detener el microservicio, vaciar las tablas (`TRUNCATE`) de `colegio_bitacoras` y ejecutarlo de nuevo.
-
-## Tareas
-
-- [x] Constantes de estado `EstadoBitacora` y `EstadoEnvio`
-- [x] Entidades `Bitacora`, `PreguntaOrientadora`, `Registro` y `Retroalimentacion`
-- [x] Repositorios `JpaRepository` (con la consulta de bitácora duplicada)
-- [x] Servicios con las reglas de negocio
-- [x] Controladores REST con los endpoints de la tabla
-- [x] Manejo de errores (400 por validación, 404 si no existe, 409 si se rompe una regla)
-- [x] Datos de prueba iniciales
-- [x] Probar los endpoints con Postman
+  "mes": 12,
